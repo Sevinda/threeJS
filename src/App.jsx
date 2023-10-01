@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import { Canvas } from "@react-three/fiber";
 import Box from "./components/Box";
@@ -13,7 +13,9 @@ const App = () => {
           <OrbitControls enableZoom={false} />
           <ambientLight intensity={0.3} />
           <directionalLight position={[-2, 5, 2]} intensity={10} />
-          <Box />
+          <Suspense fallback={null}>
+            <Box />
+          </Suspense>
         </Canvas>
       </div>
     </div>
